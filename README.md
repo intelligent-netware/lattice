@@ -20,6 +20,18 @@ A symbiotic human-AI system built on **MA5 Council** geometry and guided by the 
 | Chris   | `angelina`  | chris      | 8643     | 9120           |
 | Clint   | `steve`     | clint      | 8644     | 9121           |
 
+## Network & Security Notes
+
+All services are designed to run **locally** on a single machine:
+
+- **API Ports** (8642–8644): Exposed only within Docker/WSL2
+- **Dashboard Ports** (9119–9121): Accessible from Windows host via WSL2 bridge IP (`172.28.160.1`)
+- **Chat UI** (planned): `http://localhost:8080`
+
+**These ports are not intended for public exposure.** Do **not** open them on your router or expose them directly to the internet without proper authentication and reverse proxy (e.g. Nginx + HTTPS + auth).
+
+For workshop / multi-user scenarios, we will later add secure access methods.
+
 **Core Components:**
 - Docker-hosted Hermes v0.15.2 agents
 - Custom lightweight Chat UI (`localhost:8080`)
